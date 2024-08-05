@@ -18,51 +18,62 @@
 <body>
     <div class="container">
         <div class="row d-flex justify-content-center flex-wrap">
-
-            <form action="salvar.php" method="post" class="col-md-7">
+            <header>
                 <h1 class="display-4 text-center mb-3">Adicionar Tarefa</h1>
-                <fieldset class="border p-4">
-                    <legend class="w-50 h6-display-5 text-center">Nova Tarefa</legend>
-                    <div class="form-group">
-                        <label>Tarefa:</label>
-                        <input type="text" class="form-control" name="tarefa" placeholder="Nome da tarefa"
-                            maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label>Descrição:</label>
-                        <textarea name="descricao" class="form-control"
-                            placeholder="Descreva a tarefa em poucas palavras" maxlength="150" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Prazo:</label>
-                        <input type="date" name="prazo" class="form-control" maxlength="20">
-                    </div>
-                    <div>
-                        <fieldset class="border mb-3 p-1">
-                            <legend class="w-auto h6">Prioridade</legend>
-                            <label for="">Baixa</label>
-                            <input type="radio" name="prioridade" value="baixa">
-                            <label for="">| Média</label>
-                            <input type="radio" name="prioridade" value="media">
-                            <label for="">| Alta</label>
-                            <input type="radio" name="prioridade" value="alta">
-                        </fieldset>
-                    </div>
-                    <div>
-                        <label for="">Tarefa Concluída:</label>
-                        <input type="checkbox" name="tarefa_concluida" value="concluido">
-                        <br>
-                        <label for="">Lembrete por e-mail:</label>
-                        <input type="checkbox" name="lembrete">
-                    </div>
-                    <div class="col-sm-12 text-center">
-                        <input type="submit" value="Cadastrar" class="btn btn-primary">
-                    </div>
-                    <div class="col-sm-12 text-center mt-3">
-                        <a href="index.php">Voltar</a>
-                    </div>
-                </fieldset>
-            </form>
+            </header>
+
+            <main>
+                <form action="salvar.php" method="post" class="col-md-7">
+                    <fieldset class="border p-4">
+                        <legend class="w-50 h6-display-5 text-center">Nova Tarefa</legend>
+                        
+                        <div class="form-group">
+                            <label>Tarefa:</label>
+                            <input type="text" class="form-control" name="tarefa" placeholder="Nome da tarefa"
+                                maxlength="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrição:</label>
+                            <textarea name="descricao" class="form-control"
+                                placeholder="Descreva a tarefa em poucas palavras" maxlength="150" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Prazo:</label>
+                            <input type="date" name="prazo" class="form-control" maxlength="20">
+                        </div>
+
+                        <div>
+                            <fieldset class="border mb-3 p-1">
+                                <legend class="w-auto h6">Prioridade</legend>
+                                <label for="">Baixa</label>
+                                <input type="radio" name="prioridade" value="baixa">
+                                <label for="">| Média</label>
+                                <input type="radio" name="prioridade" value="media">
+                                <label for="">| Alta</label>
+                                <input type="radio" name="prioridade" value="alta">
+                            </fieldset>
+                        </div>
+
+                        <div>
+                            <label for="">Tarefa Concluída:</label>
+                            <input type="checkbox" name="tarefa_concluida" value="concluido">
+                            <br>
+                            <label for="">Lembrete por e-mail:</label>
+                            <input type="checkbox" name="lembrete">
+                        </div>
+
+                        <div class="col-sm-12 text-center">
+                            <input type="submit" value="Cadastrar" class="btn btn-primary">
+                        </div>
+
+                        <div class="col-sm-12 text-center mt-3">
+                            <a href="index.php">Voltar</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </main>
 
         </div>
     </div>

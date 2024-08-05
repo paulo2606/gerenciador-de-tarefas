@@ -33,7 +33,6 @@ $result = mysqli_query($conn, $query);
         </header>
 
         <main>
-            
             <div class="row d-flex justify-content-center flex-wrap">
                 <?php
 

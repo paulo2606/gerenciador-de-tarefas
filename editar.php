@@ -28,58 +28,61 @@ $linhaUpdate = mysqli_fetch_assoc($resultUpdate);
 
 <body>
     <div class="container">
-        <form action="salvar-edicao.php?id=<?=$linhaUpdate['id'];?>" method="post" class="col-md-6 offset-3">
+        <header>
             <h1 class="display-4 text-center mb-5">Editar Tarefa</h1>
-            <fieldset class="border p-4 mt-5">
-                <legend class="w-50 h6-display-5 text-center"><?=$linhaUpdate['tarefa'];?></legend>
+        </header>
 
-                <div class="form-group">
-                    <label>Código:</label>
-                    <input type="text" class="form-control" name="id" maxlength="50" value="<?=$linhaUpdate['id'];?>" disabled>
-                </div>
+        <main>
+            <form action="salvar-edicao.php?id=<?=$linhaUpdate['id'];?>" method="post" class="col-md-6 offset-3">
+                <fieldset class="border p-4 mt-5">
+                    <legend class="w-50 h6-display-5 text-center"><?=$linhaUpdate['tarefa'];?></legend>
+                    
+                    <div class="form-group">
+                        <label>Código:</label>
+                        <input type="text" class="form-control" name="id" maxlength="50" value="<?=$linhaUpdate['id'];?>" disabled>
+                    </div>
 
-                <div class="form-group">
-                    <label>Tarefa:</label>
-                    <input type="text" class="form-control" name="tarefa" maxlength="50" value="<?=$linhaUpdate['tarefa'];?>" required>
-                </div>
+                    <div class="form-group">
+                        <label>Tarefa:</label>
+                        <input type="text" class="form-control" name="tarefa" maxlength="50" value="<?=$linhaUpdate['tarefa'];?>" required>
+                    </div>
 
-                <div class="form-group">
-                    <label>Descrição:</label>
-                    <textarea name="descricao" class="form-control" maxlength="150" required><?=$linhaUpdate['desc'];?></textarea>
-                </div>  
+                    <div class="form-group">
+                        <label>Descrição:</label>
+                        <textarea name="descricao" class="form-control" maxlength="150" required><?=$linhaUpdate['desc'];?></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label>Prazo:</label>
-                    <input type="date" name="prazo" class="form-control" value="<?=$linhaUpdate['prazo'];?>" maxlength="20">
-                </div>
+                    <div class="form-group">
+                        <label>Prazo:</label>
+                        <input type="date" name="prazo" class="form-control" value="<?=$linhaUpdate['prazo'];?>" maxlength="20">
+                    </div>
 
-                <div>
-                    <fieldset class="border mb-3 p-1">
-                        <legend class="w-auto h6">Prioridade</legend>
-                        <label>Baixa</label>
-                        <input type="radio" name="prioridade" value="baixa" <?=($linhaUpdate['prioridade'] == 'baixa') ? 'checked' : '';?>>
+                    <div>
+                        <fieldset class="border mb-3 p-1">
+                            <legend class="w-auto h6">Prioridade</legend>
+                            <label>Baixa</label>
+                            <input type="radio" name="prioridade" value="baixa" <?=($linhaUpdate['prioridade'] == 'baixa') ? 'checked' : '';?>>
+                            <label>| Média</label>
+                            <input type="radio" name="prioridade" value="media" <?=($linhaUpdate['prioridade'] == 'media') ? 'checked' : '';?>>
+                            <label>| Alta</label>
+                            <input type="radio" name="prioridade" value="alta" <?=($linhaUpdate['prioridade'] == 'alta') ? 'checked' : '';?>>
+                        </fieldset>
+                    </div>
 
-                        <label>| Média</label>
-                        <input type="radio" name="prioridade" value="media" <?=($linhaUpdate['prioridade'] == 'media') ? 'checked' : '';?>>
+                    <div>
+                        <label for="">Tarefa Concluída:</label>
+                        <input type="checkbox" name="tarefa_concluida" value="concluido" <?=($linhaUpdate['situacao'] == 'concluido') ? 'checked' : '';?>>
+                        <br>
+                        <label for="">Lembrete por e-mail:</label>
+                        <input type="checkbox" name="lembrete">
+                    </div>
 
-                        <label>| Alta</label>
-                        <input type="radio" name="prioridade" value="alta" <?=($linhaUpdate['prioridade'] == 'alta') ? 'checked' : '';?>>
-                    </fieldset>
-                </div>
-
-                <div>
-                    <label for="">Tarefa Concluída:</label>
-                    <input type="checkbox" name="tarefa_concluida" value="concluido" <?=($linhaUpdate['situacao'] == 'concluido') ? 'checked' : '';?>>
-                    <br>
-                    <label for="">Lembrete por e-mail:</label>
-                    <input type="checkbox" name="lembrete">
-                </div>
-
-                <div class="col-sm-12 text-center">
-                    <input type="submit" value="Salvar" class="btn btn-primary">
-                </div>
-            </fieldset>
-        </form>
+                    <div class="col-sm-12 text-center">
+                        <input type="submit" value="Salvar" class="btn btn-primary">
+                    </div>
+                </fieldset>
+            </form>
+        </main>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
