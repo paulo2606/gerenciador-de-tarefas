@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="midia/icone-aba.ico" type="image/x-icon">   
     <title>Gerenciador de Tarefas</title>
 
     <!-- bootstrap -->
@@ -17,16 +18,15 @@
 
 <body>
     <div class="container">
-        <div class="row d-flex justify-content-center flex-wrap">
-            <header>
-                <h1 class="display-4 text-center mb-3">Adicionar Tarefa</h1>
-            </header>
-
-            <main>
+        <header>
+            <h1 class="display-4 text-center mb-3">Adicionar Tarefa</h1>
+        </header>
+        <main>
+            <div class="row d-flex justify-content-center flex-wrap">
                 <form action="salvar.php" method="post" class="col-md-7">
                     <fieldset class="border p-4">
                         <legend class="w-50 h6-display-5 text-center">Nova Tarefa</legend>
-                        
+
                         <div class="form-group">
                             <label>Tarefa:</label>
                             <input type="text" class="form-control" name="tarefa" placeholder="Nome da tarefa"
@@ -73,9 +73,8 @@
                         </div>
                     </fieldset>
                 </form>
-            </main>
-
-        </div>
+            </div>
+        </main>
     </div>
 
 
